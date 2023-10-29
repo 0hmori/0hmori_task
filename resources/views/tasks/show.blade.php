@@ -11,10 +11,15 @@
 
 <body>
     <h1>タスク詳細</h1>
+    <div class="task-title">
     <p>【タイトル】</p>
     <p>{{ $task->title }}</p>
+    </div>
+
+    <div class="task-body">
     <p>【内容】</p>
     <p>{!! nl2br(e($task->body)) !!}</p>
+    </div>
 
     <div class="button-group">
         <button onclick='location.href="{{ route('tasks.index') }}"'>一覧へ戻る</button>

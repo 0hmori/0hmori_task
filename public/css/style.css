@@ -4,3 +4,24 @@
     width: 300px;
     height: 100px;
 }
+
+.button-group {
+    display: flex;
+}
+
+
+p {
+    padding-right: 10px; /* テキストとボタンの間のスペースを調整 */
+    
+}
+
+.task-title{
+    line-height: 0.5;
+    padding-bottom: 5px;
+}
+
+.task-body{
+    line-height: 0.5;
+
+}
+
