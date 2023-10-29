@@ -13,20 +13,20 @@
     <h1>タスク一覧</h1>
     <!-- <ul>-->
 
-        <div class="task-view" style="display: flex; flex-direction: column;">
-            @foreach ($tasks as $task)
-                <div style="display: flex; align-items: center; margin-bottom: 0px;">
+    <div class="task-view" style="display: flex; flex-direction: column;">
+        @foreach ($tasks as $task)
+            <div style="display: flex; align-items: center; margin-bottom: -10px; margin-top: -15px;">
                 <!-- // リンク先をidで取得し名前で出力 -->
-                    <p style="margin-right: 5px;"><a href="/tasks/{{ $task->id }}">{{ $task->title }}</a></p>
-                    <form action="{{ route('tasks.destroy', $task) }}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <input type="submit" value="削除する" onclick="if(!confirm('削除しますか？')){return false};">
-                    </form>
-                </div>
-            @endforeach
-        </div>
-        
+                <p style="margin-right: 0px;"><a href="/tasks/{{ $task->id }}">{{ $task->title }}</a></p>
+                <form action="{{ route('tasks.destroy', $task) }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <input type="submit" value="削除する" onclick="if(!confirm('削除しますか？')){return false};">
+                </form>
+            </div>
+        @endforeach
+    </div>
+
     <!-- </ul>-->
 
     <hr>
