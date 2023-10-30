@@ -28,18 +28,19 @@
     <form action="{{ route('tasks.update', $task) }}" method="post">
         @csrf
         @method('PATCH')
+
         <p>
             <label for="title">論文タイトル</label><br>
-            <input type="text" name="title" id="title" value="{{ old('title', $task->title) }}">
+            <input type="text" name="title" id="title" value="{{ $task->title }}">
         </p>
         <p>
             <label for="body">本文</label><br>
-            <textarea name="body" class="body" id="body">{{ old('body', $task->body) }}</textarea>
+            <textarea name="body" class="body" id="body">{{ $task->body }}</textarea>
         </p>
-
         <input type="submit" value="更新">
-        <button onclick='location.href="{{ route('tasks.show', $task) }}"'>詳細に戻る</button>
     </form>
+    <button onclick='location.href="{{ route('tasks.show', $task) }}"'>詳細へ戻る</button>
+
 </body>
 
 </html>

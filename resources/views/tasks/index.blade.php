@@ -17,7 +17,7 @@
         @foreach ($tasks as $task)
             <div style="display: flex; align-items: center; margin-bottom: -10px; margin-top: -15px;">
                 <!-- // リンク先をidで取得し名前で出力 -->
-                <p style="margin-right: 0px;"><a href="/tasks/{{ $task->id }}">{{ $task->title }}</a></p>
+                <p style="margin-right: 0px;"><a href={{ route('tasks.show', $task) }}">{{ $task->title }}</a></p>
                 <form action="{{ route('tasks.destroy', $task) }}" method="post">
                     @csrf
                     @method('DELETE')
